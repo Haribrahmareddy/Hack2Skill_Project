@@ -1,0 +1,301 @@
+body {
+     margin: 0;
+}
+.hero {
+     position: relative;
+     overflow: hidden;
+     min-height: 600px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: #000;
+     flex-wrap: wrap;
+     padding: 40px 20px;
+}
+
+.background-animation {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+
+.orbit {
+     position: absolute;
+     border: 2px solid rgba(138, 43, 226, 0.5);
+     border-radius: 50%;
+     box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+     animation: orbitPulse 6s linear infinite;
+}
+
+.orbit1 {
+     width: 200px;
+     height: 200px;
+     animation-delay: 0s;
+}
+
+.orbit2 {
+     width: 300px;
+     height: 300px;
+     animation-delay: 1.5s;
+}
+
+.orbit3 {
+     width: 400px;
+     height: 400px;
+     animation-delay: 3s;
+}
+
+.orbit4 {
+     width: 500px;
+     height: 500px;
+     animation-delay: 4.5s;
+}
+
+@keyframes orbitPulse {
+     0% {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+     }
+
+     100% {
+          transform: translate(-50%, -50%) scale(1.3);
+          opacity: 0;
+     }
+}
+.astronaut {
+     position: relative;
+     z-index: 2;
+     animation: float 4s ease-in-out infinite;
+     flex: 1 1 300px;
+     text-align: center;
+}
+
+@keyframes float {
+     0% {
+          transform: translateY(0);
+     }
+
+     50% {
+          transform: translateY(-15px);
+     }
+
+     100% {
+          transform: translateY(0);
+     }
+}
+
+.astronaut img {
+     max-width: 200px;
+     width: 100%;
+}
+
+.info-box {
+     flex: 1 1 300px;
+     padding: 40px;
+     z-index: 1;
+}
+
+.info-box.left {
+     text-align: right;
+}
+
+.info-box.right {
+     text-align: left;
+}
+
+.info-box .box {
+     background: rgba(138, 43, 226, 0.5);
+     color: #fff;
+     padding: 30px;
+     max-width: 300px;
+     margin: 0 auto;
+}
+
+.info-box .box h3 {
+     margin: 0 0 10px;
+}
+
+.info-box .box p {
+     margin: 0;
+}
+
+  .timeline {
+    padding: 3rem 1rem;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+
+  .timeline h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+  }
+
+  #timeline-slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .timeline-item {
+    background-color: #111;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(138, 43, 226, 0.5);
+    width: 260px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .timeline-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.5);
+  }
+
+  .timeline-item .title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: rgba(138, 43, 226, 0.5) /* Why Practice purple */
+  }
+
+  .timeline-item .date {
+    color: #d1d1ff;
+    font-size: 0.9rem;
+  }
+
+  .progress-bar {
+    height: 6px;
+    border-radius: 4px;
+    background-color: #444;
+    margin: 0.5rem 0 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .timeline-item:first-child .progress-bar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(138, 43, 226, 0.5);
+  }
+  @media (max-width: 768px) {
+    .timeline-item {
+      width: 100%;
+    }
+  }
+.gallery {
+  padding: 60px 20px;
+  background: #000;
+  text-align: center;
+}
+
+.gallery h2 {
+  color: #7a3cff;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.custom-grid {
+  display: grid;
+  grid-template-areas:
+    "img1 img2"
+    ".    img5"
+    "img3 img4";
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.img {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 20px rgba(122, 60, 255, 0.2);
+}
+
+.img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(122, 60, 255, 0.4);
+  z-index: 2;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img1 { grid-area: img1; }
+.img2 { grid-area: img2; }
+.img3 { grid-area: img3; }
+.img4 { grid-area: img4; }
+.img5 { grid-area: img5; }
+
+@media (max-width: 768px) {
+  .custom-grid {
+    grid-template-areas:
+      "img1"
+      "img2"
+      "img5"
+      "img3"
+      "img4";
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+     .image-container {
+          grid-template-columns: repeat(2, 1fr);
+     }
+}
+
+@media (max-width: 768px) {
+     .hero {
+          flex-direction: column;
+          text-align: center;
+          height: auto;
+     }
+
+     .info-box {
+          padding: 20px;
+          text-align: center;
+     }
+
+     .info-box.left,
+     .info-box.right {
+          text-align: center;
+     }
+
+     .astronaut img {
+          max-width: 150px;
+     }
+
+     .timeline-item {
+          min-width: 200px;
+     }
+
+     .image-container {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+     }
+}
+
+@media (max-width: 480px) {
+     .image-container {
+          grid-template-columns: 1fr;
+     }
+}
